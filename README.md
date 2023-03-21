@@ -2,7 +2,7 @@
 
 
 
-Demo : [https://auth.binusassignment.tech](https://auth.binusassignment.tech/)
+Demo : [https://authscafollding.binusassignment.tech/](https://authscafollding.binusassignment.tech)
 
 # Simple Authentification Scaffolding -  (Individual Assignment 2)
 
