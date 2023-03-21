@@ -105,8 +105,8 @@ source : 20220629154906_TP2-W7-S11-R1
 
 - Akses Login 
 
-  - Username : superadmin
-  - Password  : superadmin
+  - Username : binusian
+  - Password : binusian
 
 ------
 
