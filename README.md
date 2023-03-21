@@ -1,4 +1,4 @@
-[![Streaming Apps Logo](https://raw.githubusercontent.com/dikhimartin/streaming-video-app/main/public/admin_assets/assets/images/logo-full.png)](https://streamingapp.binusassignment.tech)
+[![Simple App](https://raw.githubusercontent.com/dikhimartin/simple-authentication-scaffolding/main/public/admin_assets/assets/images/logo-full.png)](https://streamingapp.binusassignment.tech)
 
 
 
@@ -122,6 +122,7 @@ source : 20220629154906_TP2-W7-S11-R1
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+
 
 
 
