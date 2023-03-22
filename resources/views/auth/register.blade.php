@@ -48,7 +48,7 @@
                     </div>
 
                     @if (config('app.env') == 'production')
-                        <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-danger' : '' }}">
+                        <div class="form-group mt-3 {{ $errors->has('g-recaptcha-response') ? ' has-danger' : '' }}">
                             <div class="input-group">
                                 {!! NoCaptcha::renderJs() !!}
                                 {!! NoCaptcha::display() !!}
