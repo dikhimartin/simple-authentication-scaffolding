@@ -92,9 +92,6 @@ return [
     'information_group' => 'Information Group',
     'display_name' => 'Nama Tampilan',
 
-
-
-    //JAMU 4
     'active' => 'Active',
     'non-active' => 'Non-Active',
     'are_you_sure' => 'Are You Sure?',

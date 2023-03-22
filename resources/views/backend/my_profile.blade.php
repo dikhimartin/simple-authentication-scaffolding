@@ -116,8 +116,6 @@
                                         <div id="targetOuter">
                                             <div id="targetLayer"><img src="{{ $image != '' ? '/images/profile/' . $image : '/images/profile/anonymous.png' }}" alt="" width="200px" height="200px" class="upload-preview " /></div>
                                                 <img src="{{ URL::asset('admin_assets/assets/images/photo.png') }}"  class="icon-choose-image"/>
-                                                
-
                                                 <div class="icon-choose-image" onClick="showUploadOption()"></div>
                                                     <div id="profile-upload-option">
                                                         <div class="profile-upload-option-list">

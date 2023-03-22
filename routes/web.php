@@ -1,8 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Input;
 
-Route::get('/', 'Auth\LoginController@showLoginForm');
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'); 
+Route::group(array('prefix' => LaravelLocalization::setLocale() . '/'), function () {
+	Route::get('/', 'Auth\LoginController@showLoginForm');
+	Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'); 
+});
 
 Auth::routes();
 

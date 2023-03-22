@@ -74,7 +74,7 @@
                                         <input id="checkbox-signup" type="checkbox">
                                         <label for="checkbox-signup">{{__('main.remember_me')}}</label>
                                     </div> 
-                                    <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> {{ __('main.forgot_password') }}?</a> 
+                                    <a href="{{ LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(),URL::to( 'password/reset' ))}}" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> {{ __('main.forgot_password') }}?</a> 
                                 </div>
                             </div>
 
@@ -83,38 +83,6 @@
                                     <div>{{ __('main.dont_have_an_account') }} <a href="/register" class="text-info m-l-5"><b>{{ __('main.signup') }}</b></a></div>
                                 </div>
                             </div>
-                    </form>
-
-                    <!-- reset password -->
-                    <form class="form-horizontal"  id="recoverform" role="form" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <h3>{{ __('main.recover_password') }}</h3>
-                                <p class="text-muted">{{ __('main.send_password_reset_link_detail') }}</p>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                             <div class="col-xs-12">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="form-group text-center m-t-20">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('main.send_password_reset_link') }}
-                                </button>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

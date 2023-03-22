@@ -19,7 +19,7 @@
 
                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" placeholder="Name" name="name" value="{{ old('name') }}">
+                            <input class="form-control" type="text" placeholder="Nama" name="name" value="{{ old('name') }}">
                         </div>
                         @if ($errors->has('name'))
                             <small class="form-control-feedback">{{ $errors->first('name') }}</small>
@@ -37,7 +37,7 @@
 
                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" placeholder="Password" name="password" value="{{ old('password') }}">
+                            <input class="form-control" type="password" placeholder="Kata Sandi" name="password" value="{{ old('password') }}">
                         </div>
                         @if ($errors->has('password'))
                             <small class="form-control-feedback">{{ $errors->first('password') }}</small>
@@ -45,12 +45,12 @@
                     </div>    
 
                     <div class="col-xs-12">
-                        <input class="form-control" id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required">
+                        <input class="form-control" id="password-confirm" type="password" placeholder="Konfirmasi Kata Sandi" name="password_confirmation" required">
                     </div>
 
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
-                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Register</button>
+                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Registrasi</button>
                         </div>
                     </div>                
                   

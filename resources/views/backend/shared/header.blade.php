@@ -24,7 +24,7 @@
             </ul>
             <ul class="navbar-nav my-lg-0">
                 <!-- language -->
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="/images/flags_large/{{laravellocalization::getcurrentlocale()}}.png" width="22">
                     </a>
@@ -37,7 +37,7 @@
                             @endif
                          @endforeach
                     </div>
-                </li>
+                </li> -->
                 <!-- profile -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ $user->image != '' ? '/images/profile/' . $user->image : '/images/profile/anonymous.png' }}" alt="user" class="profile-pic" /></a>

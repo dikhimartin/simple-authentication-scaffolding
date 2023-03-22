@@ -14,8 +14,6 @@ return [
 
     'name' => env('APP_NAME'),
 
-    'upload_max_size' => env('UPLOAD_MAX_FILESIZE'),
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -80,7 +78,7 @@ return [
     */
 
     'locale' => 'id',
-    'locales' => ['en' => 'English', 'id' => 'Indonesia'],
+    'locales' => ['id' => 'Indonesia','en' => 'English'],
 
     /*
     |--------------------------------------------------------------------------

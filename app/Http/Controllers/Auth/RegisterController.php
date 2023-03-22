@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\User_role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -47,11 +48,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'password.min' => __('passwords.password_validate_1'),
+            'password.regex' => __('passwords.password_validate_2'),
+        ];
+        
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+            'password' => [
+                'required',
+                'string',
+                'min:10', // must be at least 10 characters
+                'confirmed',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,}$/'
+            ],
+        ], $messages);
     }
 
     /**
@@ -66,12 +78,22 @@ class RegisterController extends Controller
         $primary="id_users";
         $prefik="K";
         $uniqueCode=User::autonumber($table,$primary,$prefik);
-        return User::create([
-            'id_users' => $uniqueCode,
-            'username' => $data['username'],
-            'name' => $data['name'],
-            'status' => 'Y',
-            'password' => bcrypt($data['password']),
-        ]);
+        $guest_role = 2;
+
+        $user = new User;
+        $user->id_users       = $uniqueCode;
+        $user->username       = $data['username'];
+        $user->name           = $data['name'];
+        $user->id_level_user  = $guest_role;
+        $user->status         = "Y";
+        $user->password       = bcrypt($data['password']);
+        $user->save();
+
+        $role_user = new User_role;
+        $role_user->user_id = $user->id_users;
+        $role_user->role_id = $guest_role;
+        $role_user->save();
+        
+       return $user;
     }
 }

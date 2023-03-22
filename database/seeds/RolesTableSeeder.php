@@ -22,6 +22,15 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2023-03-17 14:24:23',
                 'updated_at' => '2023-03-17 14:24:23'
             ],
+            [
+                'id' => 2,
+                'name' => 'Guest',
+                'description' => 'Guest',
+                'display_name' => 'Guest',
+                'status' => 'Y',
+                'created_at' => '2023-03-17 14:24:23',
+                'updated_at' => '2023-03-17 14:24:23'
+            ]
         ]);
     }
 }

@@ -80,8 +80,6 @@ return [
     'group_user' => 'Grup Pengguna',
     'name_group' => 'Nama Grup',
 
-
-
     // Users Role
     'show_permissions' => 'Tunjukan Perijinan',
     'permissions_detail' => 'Silakan pilih izin otorisasi untuk grup akun ini',
@@ -90,9 +88,6 @@ return [
     'display_name' => 'Display Name',
     'check_all' => 'Cek Semua',
 
-
-
-    //JAMU 4
     'active' => 'Aktif',
     'non-active' => 'Tidak Aktif',
     'are_you_sure' => 'Apakah Anda Yakin?',
@@ -122,7 +117,4 @@ return [
     'data_added_succesfully' => 'Data berhasil ditambah',
     'data_succesfully_deleted' => 'Data berhasil dihapus',
     'data_succesfully_changed' => 'Data berhasil diubah',
-
-
-
 ];
