@@ -12,8 +12,9 @@
                         {{ csrf_field() }}
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <h3>{{ __('main.recover_password') }}</h3>
-                                <p class="text-muted">{{ __('main.send_password_reset_link_detail') }}</p>
+                                <a href="/" class="text-center db"><img src="{{ URL::asset('admin_assets/assets/images/logo-icon.png') }}" alt="MartinCodes" width="100" /></a>
+                                <h3 class="text-center mt-5">{{ __('main.recover_password') }}</h3>
+                                <p style="text-align:center;" class="text-muted text-center">{{ __('main.send_password_reset_link_detail') }}</p>
                             </div>
                         </div>
                         @if (session('status'))
@@ -21,7 +22,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif                        
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                             <div class="col-xs-12">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                 @if ($errors->has('email'))

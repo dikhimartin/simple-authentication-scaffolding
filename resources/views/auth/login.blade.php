@@ -9,14 +9,12 @@
                     <form action="/login" class="form-horizontal form-material login-form" id="loginform" role="form" method="POST" onsubmit="return validasi_input(this)">
                         {{ csrf_field() }}
 
-                            <a href="javascript:void(0)" onclick="location.reload()" class="text-center db"><img src="{{ URL::asset('admin_assets/assets/images/logo-icon.png') }}" alt="MartinCodes" width="100" />
-                                <br/>
-                                <br/>
-                                    <h4 align="center" class="box-title m-b-15 text-muted">{{ config('app.name', 'Laravel') }}</h4>
-                                <br/>
-                            </a>
-                            <p style="margin-top: 10px;"></p>
-                            <h3 class="box-title m-b-20"></h3>
+                            <div class="form-group ">
+                                <div class="col-xs-12">
+                                    <a href="/" class="text-center db"><img src="{{ URL::asset('admin_assets/assets/images/logo-icon.png') }}" alt="MartinCodes" width="100" /></a>
+                                    <h4 class="box-title m-b-15 text-center text-muted mt-4">{{ config('app.name', 'Laravel') }}</h4>
+                                </div>
+                            </div>
 
                             <div class="form-group" id="username">
                                 <div class="col-xs-12">
@@ -27,18 +25,18 @@
 
                             <div class="form-group" id="password">
                                 <div class="col-xs-12">
-                                    <input name="password" class="form-control" type="password" placeholder="Password">
+                                    <input name="password" class="form-control" type="password" placeholder="Kata Sandi">
                                 </div>
                                 <small class="form-control-feedback" id="alert-password"></small>
                             </div>
 
                             @if (config('app.env') == 'production')
-                            <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-danger' : '' }}">
-                                <div class="input-group">
-                                    {!! NoCaptcha::renderJs() !!}
-                                    {!! NoCaptcha::display() !!}
+                                <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-danger' : '' }}">
+                                    <div class="input-group">
+                                        {!! NoCaptcha::renderJs() !!}
+                                        {!! NoCaptcha::display() !!}
+                                    </div>
                                 </div>
-                            </div>
                             @endif
                             
                             @if (count($errors) > 0)

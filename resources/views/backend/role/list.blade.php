@@ -110,7 +110,7 @@
   function add(){
     $(".modal-title").html("Upload {{ $pages_title }}");
     $('.form-control').val('');
-    $('input').removeClass("has-error");
+    $('input').removeClass("has-danger");
     $('#btnUpdate').addClass('none');
     $('#btnSave').removeClass('none');
     $('#id').val('');

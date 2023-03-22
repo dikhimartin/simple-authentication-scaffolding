@@ -52,8 +52,8 @@ class RegisterController extends Controller
             'password.min' => __('passwords.password_validate_1'),
             'password.regex' => __('passwords.password_validate_2'),
         ];
-        
-        return Validator::make($data, [
+    
+        $rules = [
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
             'password' => [
@@ -63,9 +63,15 @@ class RegisterController extends Controller
                 'confirmed',
                 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,}$/'
             ],
-        ], $messages);
+        ];
+    
+        // add captcha validation rule if in production environment
+        if (config('app.env') === 'production') {
+            $rules['g-recaptcha-response'] = 'required|captcha';
+        }
+    
+        return Validator::make($data, $rules, $messages);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *

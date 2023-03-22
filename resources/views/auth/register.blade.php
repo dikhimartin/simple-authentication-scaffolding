@@ -8,18 +8,17 @@
                     <!-- Form Registrasi -->
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
-                    <a href="javascript:void(0)" onclick="location.reload()" class="text-center db"><img src="{{ URL::asset('admin_assets/assets/images/logo-icon.png') }}" alt="MartinCodes" width="100" />
-                        <br/>
-                        <br/>
-                            <h4 align="center" class="box-title m-b-15 text-muted">{{ config('app.name', 'Laravel') }}</h4>
-                        <br/>
-                    </a>
-                    <p style="margin-top: 10px;"></p>
-                    <h3 class="box-title m-b-20"></h3>
+
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <a href="/" class="text-center db"><img src="{{ URL::asset('admin_assets/assets/images/logo-icon.png') }}" alt="MartinCodes" width="100" /></a>
+                            <h4 class="box-title m-b-15 text-center text-muted mt-4">{{ config('app.name', 'Laravel') }}</h4>
+                        </div>
+                    </div>
 
                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" placeholder="Nama" name="name" value="{{ old('name') }}">
+                            <input class="form-control" type="text" placeholder="Name" name="name" value="{{ old('name') }}">
                         </div>
                         @if ($errors->has('name'))
                             <small class="form-control-feedback">{{ $errors->first('name') }}</small>
@@ -37,7 +36,7 @@
 
                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" placeholder="Kata Sandi" name="password" value="{{ old('password') }}">
+                            <input class="form-control" type="password" placeholder="Password" name="password" value="{{ old('password') }}">
                         </div>
                         @if ($errors->has('password'))
                             <small class="form-control-feedback">{{ $errors->first('password') }}</small>
@@ -45,12 +44,21 @@
                     </div>    
 
                     <div class="col-xs-12">
-                        <input class="form-control" id="password-confirm" type="password" placeholder="Konfirmasi Kata Sandi" name="password_confirmation" required">
+                        <input class="form-control" id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required">
                     </div>
+
+                    @if (config('app.env') == 'production')
+                        <div class="form-group {{ $errors->has('g-recaptcha-response') ? ' has-danger' : '' }}">
+                            <div class="input-group">
+                                {!! NoCaptcha::renderJs() !!}
+                                {!! NoCaptcha::display() !!}
+                            </div>
+                        </div>
+                    @endif                    
 
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
-                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Registrasi</button>
+                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Register</button>
                         </div>
                     </div>                
                   
